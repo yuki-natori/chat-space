@@ -31,30 +31,30 @@ Things you may want to cover:
 |group_id|integer|null: false, foreign_key: true|
 
   Association
-- belongs_to :group
+- belongs_to :groups
 - belongs_to :user
 
   userテーブル
 
 |Column|Type|Options|
 |------|----|-------|
-|email|string|null: false, foreign_key: true|
-|password|string|null: false, foreign_key: true|
-|nickname|string|null: false, foreign_key: true|
+|email|string|null: false|
+|password|string|null: false|
+|nickname|string|null: false|
 
   Association
-- has_many :group, through: :groups_users
+- has_many :groups, through: :groups_users
 - has_many :comments
 - has_many :groups_users
 
 
-  groupテーブル
+  groupsテーブル
 
 |Column|Type|Options|
 |------|----|-------|
-|text|text|null: false, foreign_key: true|
+|text|text|null: false|
 |user_id|integer|null: false, foreign_key: true|
-|group_ures_id|integer|null: false, foreign_key: true|
+|groups_users_id|integer|null: false, foreign_key: true|
 
   Association
 - has_many :comment
@@ -64,10 +64,11 @@ Things you may want to cover:
 
 |Column|Type|Options|
 |------|----|-------|
-|text|text|null: false, foreign_key: true|
+|text|text||
+|image|text||
 |user_id|integer|null: false, foreign_key: true|
-|group_id|integer|null: false, foreign_key: true|
+|groups_id|integer|null: false, foreign_key: true|
 
   Association
-- belongs_to :group
+- belongs_to :groups
 - belongs_to :user
