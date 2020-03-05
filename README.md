@@ -54,7 +54,7 @@ Things you may want to cover:
 |------|----|-------|
 |text|text|null: false|
 |user_id|integer|null: false, foreign_key: true|
-|groups_users_id|integer|null: false, foreign_key: true|
+|groups_users_id||
 
   Association
 - has_many :comments
