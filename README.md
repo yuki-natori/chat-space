@@ -34,24 +34,13 @@ Things you may want to cover:
 - belongs_to :group
 - belongs_to :user
 
-  userテーブル
+ userテーブル
+
 |Column|Type|Options|
 |------|----|-------|
-|email|string|null: false|
-|password|string|null: false|
-|nickname|string|null: false|
-
-   Association
-- belongs_to :groups_users
-- belongs_to :comment
-
-  commentテーブル
-|Column|Type|Options|
-|------|----|-------|
-|text|text|null: false|
 |user_id|integer|null: false, foreign_key: true|
 |group_id|integer|null: false, foreign_key: true|
 
   Association
 - belongs_to :group
-- belongs_to :user
+- belongs_to :groups_users
