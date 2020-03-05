@@ -34,7 +34,7 @@ Things you may want to cover:
 - belongs_to :group
 - belongs_to :user
 
- userテーブル
+  userテーブル
 
 |Column|Type|Options|
 |------|----|-------|
@@ -44,3 +44,25 @@ Things you may want to cover:
   Association
 - belongs_to :group
 - belongs_to :groups_users
+
+  groupテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|user_id|integer|null: false, foreign_key: true|
+|group_id|integer|null: false, foreign_key: true|
+
+  Association
+- belongs_to :groups_users
+- belongs_to :user
+
+  commentテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|user_id|integer|null: false, foreign_key: true|
+|group_id|integer|null: false, foreign_key: true|
+
+  Association
+- belongs_to :group
+- belongs_to :user
