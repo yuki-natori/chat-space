@@ -43,13 +43,13 @@ Things you may want to cover:
 |nickname|string|null: false, foreign_key: true|
 
   Association
-- has_many :group
+- has_many :group, through: :groups_users
 - has_many :comments
 - has_many :groups_users
 
 
   groupテーブル
-  
+
 |Column|Type|Options|
 |------|----|-------|
 |text|text|null: false, foreign_key: true|
@@ -58,7 +58,7 @@ Things you may want to cover:
 
   Association
 - has_many :comment
-- belongs_to :user
+- belongs_to :user, through: :groups_users
 
   commentテーブル
 
