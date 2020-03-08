@@ -1,0 +1,32 @@
+.main
+  .main_top
+    .main_top_left_box
+      %p test
+      .main_top_left_box_name
+        %p Menber: masa
+    .main_top_right_edit
+      = link_to "#", class:"main_top_right_edit" do
+        Edit
+  .main_contents
+    .main_contents_box
+      .main_contents_box_log
+        .main_contents_box_log_name
+          %p masa
+        .main_contents_box_log_time
+          %p 2019/11/20(Wed) 17:43:01
+      .main_contents_box_massege
+        %p おはよう！
+  .main_footer
+    .main_footer_contents
+      .main_footer_contents_massege
+        .main_footer_contents_massege_submit
+          %input(type="text")
+        .main_footer_contents_massege_picter
+          %label(type="file")
+            = icon('fas','image')
+            %input(type="file")/
+              
+        .main_footer_contents_massege_edit
+          = link_to "#" do
+            Send
+      
