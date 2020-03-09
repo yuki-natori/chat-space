@@ -2,12 +2,12 @@
   .side_top
     .side_top_box
       .side_top_box_user
-        %p masa 
+        = current_user.name
       .side_top_box_tag
         .side_top_box_tag_icon
           = link_to "#", class: "link_btn" do
             = icon('fas', 'edit', class: 'icon')
-          = link_to "#", class: "link_btn" do
+          = link_to edit_user_path(current_user) do
             = icon('fas', 'cog', class: 'icon')
   .side_ber
     .side_ber_groups
