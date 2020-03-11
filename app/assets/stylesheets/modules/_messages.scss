@@ -11,7 +11,7 @@ $glay: #999999;
 }
 
 .wrapper {
-  height: 100vh;
+  // height: 100vh;
   width: 100vw;
   display: flex;
 }
@@ -57,10 +57,12 @@ $glay: #999999;
       color: $siro2;
       font-weight: bold;
       &_name {
+        color: $siro2;
         font-size: 15px;
         margin-bottom: 5px;
       }
       &_massege {
+        color: $siro2;
         font-size: 11px;
       }
     }
@@ -84,6 +86,9 @@ $glay: #999999;
         font-size: 12px;
         padding-top: 15px;
         color: $glay;
+      p {
+        display: inline;
+      }
       }
     }
     &_right_edit {
@@ -99,7 +104,7 @@ $glay: #999999;
   }
   &_contents {
     background-color: #fafafa;
-    height: calc(100vh - 190px);
+    // height: calc(100vh - 190px);
     &_box {
       padding: 35px 0 0 40px;
       &_log { 
@@ -124,40 +129,42 @@ $glay: #999999;
   &_footer {
     background-color: #d2d2d2;
     height: 90px;
+    padding: 20px 40px;
     &_contents {
-      padding: 20px 40px;
+      display: flex;
       &_massege {
-        display: flex;
-        align-items: center;
+        width: 100%;
+        position: relative;
         &_submit {
-          position: relative;
-          width: 100%;
-          input {
+          form {
+            display: flex;
+          }
+          &_text {
             width: 100%;
             height: 50px;
             padding: 0 10px;
           }
-        }
-        &_picter {
-          position: absolute;
-          right: 170px;
-          label {
+          &_picter {
+            
+            label {
+              position: absolute;
+              top: 10px;
+              right: 130px;
+              cursor: pointer;
+              font-size: 22px;
+            }
+              &_hidden {
+                display: none;
+              }
+          &_send {
+            background-color: $btn;
+            margin-left: 15px;
+            padding: 10px 30px;
+            color: $siro2;
             cursor: pointer;
-            font-size: 22px;
           }
-          input {
-            display: none;
           }
         }
-        &_edit {
-          background-color: $btn;
-          margin-left: 15px;
-          padding: 10px 30px;
-        }
-          a {
-            text-decoration: none;
-            color: $siro;
-          }
       }
     }
   }

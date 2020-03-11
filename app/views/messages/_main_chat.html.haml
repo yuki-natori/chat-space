@@ -1,32 +1,24 @@
 .main
   .main_top
     .main_top_left_box
-      %p test
+      = @group.name
       .main_top_left_box_name
-        %p Menber: masa
+        %p Menber : 
+        - @group.users.each do |user|
+          = user.name
     .main_top_right_edit
-      = link_to "#", class:"main_top_right_edit" do
+      = link_to edit_group_path(@group) do
         Edit
-  .main_contents
-    .main_contents_box
-      .main_contents_box_log
-        .main_contents_box_log_name
-          %p masa
-        .main_contents_box_log_time
-          %p 2019/11/20(Wed) 17:43:01
-      .main_contents_box_massege
-        %p おはよう！
+  .main_contents_box_massege
+    = render @messages
   .main_footer
     .main_footer_contents
       .main_footer_contents_massege
         .main_footer_contents_massege_submit
-          %input(type="text")
-        .main_footer_contents_massege_picter
-          %label(type="file")
-            = icon('fas','image')
-            %input(type="file")/
-              
-        .main_footer_contents_massege_edit
-          = link_to "#" do
-            Send
-      
+          = form_for [@group, @message] do |f|
+            = f.text_field :content, placeholder: 'type a message', class: 'main_footer_contents_massege_submit_text'
+            .main_footer_contents_massege_submit_picter
+              = f.label :image do
+                = icon('fas','image')
+                = f.file_field :image,class: 'main_footer_contents_massege_submit_picter_hidden'
+            = f.submit 'Send',class: 'main_footer_contents_massege_submit_picter_send'
