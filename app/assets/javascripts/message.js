@@ -58,7 +58,6 @@ $('#new_message').on('submit', function(e){
   .done(function(data){
     var html = buildHTML(data);
     $('.main_contents_box_masseges').append(html);      
-    
     $(".main_footer_contents_massege_submit_picter_send").prop('disabled', false);
   })
   .fail(function() {
