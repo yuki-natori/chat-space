@@ -43,26 +43,30 @@ $(function(){
      return html;
    };
  }
-$('#new_message').on('submit', function(e){
- e.preventDefault();
- var formData = new FormData(this);
- var url = $(this).attr('action')
- $.ajax({
-   url: url,
-   type: "POST",
-   data: formData,
-   dataType: 'json',
-   processData: false,
-   contentType: false
- })
+  $('#new_message').on('submit', function(e){
+  e.preventDefault();
+  var formData = new FormData(this);
+  var url = $(this).attr('action')
+  $.ajax({
+    url: url,
+    type: "POST",
+    data: formData,
+    dataType: 'json',
+    processData: false,
+    contentType: false
+  })
   .done(function(data){
     var html = buildHTML(data);
     $('.main_contents_box_masseges').append(html);      
-    $(".main_footer_contents_massege_submit_picter_send").prop('disabled', false);
+    $('form')[0].reset();
+    $('.main_contents_box_masseges').animate({ scrollTop: $('.main_contents_box_masseges')[0].scrollHeight});
   })
   .fail(function() {
     alert("メッセージ送信に失敗しました");
-});
+  })
+  .always(function(){
+    $(".main_footer_contents_massege_submit_picter_send").prop('disabled', false);
+  })
 
-})
+  })
 });
