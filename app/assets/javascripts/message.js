@@ -8,6 +8,7 @@ $(function(){
             ${message.user_nam}
           </div>
           <div class="main_contents_box_log_time">
+            ${message.created_a}
           </div>
         </div>
         <div class="main_contents_box_massege">
