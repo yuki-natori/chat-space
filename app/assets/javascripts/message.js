@@ -1,19 +1,19 @@
 $(function(){ 
   var buildHTML = function(message) {
     if (message.content && message.image) {
-      var html = `<div class="main_contents" data-message-id= ${message.i} >
+      var html = `<div class="main_contents" data-message-id= ${message.id} >
       <div class="main_contents_box">
         <div class="main_contents_box_log">
           <div class="main_contents_box_log_name">
-            ${message.user_nam}
+            ${message.user_name}
           </div>
           <div class="main_contents_box_log_time">
-            ${message.created_a}
+            ${message.created_at}
           </div>
         </div>
         <div class="main_contents_box_massege">
           <p class="lower-message__content">
-            ${message.conten}
+            ${message.content}
           </p>
           <img src=" ${message.image} " class="lower-message__image" >
         </div>
@@ -24,31 +24,31 @@ $(function(){
       <div class="main_contents_box">
         <div class="main_contents_box_log">
           <div class="main_contents_box_log_name">
-            ${message.user_nam}
+            ${message.user_name}
           </div>
           <div class="main_contents_box_log_time">
-            ${message.created_a}
+            ${message.created_at}
           </div>
         </div>
         <div class="main_contents_box_massege">
           <p class="lower-message__content">
-            ${message.conten}
+            ${message.content}
           </p>
         </div>
       </div>
     </div>`
   } else if (message.image) {
-    var html = `<div class="message" data-message-id= ${message.i} >
+    var html = `<div class="message" data-message-id= ${message.id} >
       <div class="upper-message">
         <div class="upper-message__user-name">
-          ${message.user_nam}
+          ${message.user_name}
         </div>
         <div class="upper-message__date">
-          ${message.created_a}
+          ${message.created_at}
         </div>
       </div>
       <div class="lower-message">
-        <img src=" ${message.imag} " class="lower-message__image" >
+        <img src=" ${message.image} " class="lower-message__image" >
       </div>
     </div>`
   };
