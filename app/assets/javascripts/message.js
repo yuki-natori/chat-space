@@ -72,6 +72,7 @@ $(function(){
     $('.main_contents_box_masseges').append(html);      
     $('form')[0].reset();
     $('.main_contents_box_masseges').animate({ scrollTop: $('.main_contents_box_masseges')[0].scrollHeight});
+    $(".main_footer_contents_massege_submit_picter_send").prop('disabled', false);
   })
   .fail(function() {
     alert("メッセージ送信に失敗しました");
