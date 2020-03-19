@@ -92,7 +92,7 @@ $(function(){
   .done(function(messages){
     if (messages.length !== 0) {
     var insertHTML = '';
-    $.each(messages, function(i,message) {insertHTM= buildHTML(message)});
+    $.each(messages, function(i,message) {insertHTML += buildHTML(message)});
     $('.main_contents_box_masseges').append(insertHTML);
     $('.main_contents_box_masseges').animate({ scrollTop: $('.main_contents_box_masseges')[0].scrollHeight});
       }
